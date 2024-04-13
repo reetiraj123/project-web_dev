@@ -1,0 +1,58 @@
+/*Css code is here*/
+
+* {
+    margin: 0;
+    font-family: arial;
+    border: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: rgb(194, 188, 188);
+    color: #fff;
+}
+
+.hero {
+    background-color: #e2e2e2;
+    padding: 50px 0;
+}
+
+        .container{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1{
+            color: black;
+            font-size: 60px;
+            text-shadow: 3px 3px 5px blueviolet;
+        }
+        #searchInput{
+            padding:10px;
+            width:500px;
+        }
+        #searchBtn{
+            background-color: blueviolet;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #searchBtn:hover{
+            background-color: black;
+        }
+        #results{
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+
+        
