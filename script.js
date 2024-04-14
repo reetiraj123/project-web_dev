@@ -48,5 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsList.innerHTML = 'Please enter a search query.';
       }
     });
+    
   });
   
