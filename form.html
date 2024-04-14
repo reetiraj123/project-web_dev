@@ -1,56 +1,61 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SignUp page</title>
   <style>
     body {
-      display: grid;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
     }
-
-    label {
-      display: block;
+    
+    form {
+      width: 50%;
+      margin: 50px auto; /* Center the form */
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-
-    input {
-      display: block;
-      margin: 10px 0 10px 0;
+    
+    form input[type="text"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
     }
-
-    h1 {
-      color: teal;
+    
+    form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
-
-    .container {
-      margin: auto;
+    
+    form input[type="submit"]:hover {
+      background-color: #45a049;
     }
   </style>
-
 </head>
-
 <body>
-
-  <div class="container">
-    <h1>SignUp/login</h1>
-    <form action="">
-      <input type="text" name="username" placeholder="Username">
-      <input type="email" name="mail" placeholder="Email">
-      <input type="password" name="pass1" placeholder="Password">
-      <input type="password" name="pass2" placeholder="Confirm Password">
-      <div><label for="countries">Select your Country:</label>
-      <select id="countries" name="countries"></select>
-      Select language:<select name="language" multiple required>
-       </div><br>
-    write something about yourself:<br>
-    <textarea name="usercomment" rows="10" cols="20" max lenght="30" placeholder="Write" spellcheck="false" required></textarea><br>
-    <input type="submit" value="Register">
-    </form>
-  </div>
-
-  <script src="app.js"></script>
+  <form>
+    <label for="name">Enter your name:</label><br>
+    <input type="text" id="name" name="name" placeholder="Your Name" minlength="3" maxlength="17" required><br>
+    
+    <label for="country">Your country:</label><br>
+    <input type="text" id="country" name="country" placeholder="Your Country" required><br>
+    
+    <label for="comment">What do you have to say?</label><br>
+    <textarea id="comment" name="usercomment" rows="5" placeholder="Write your comment" required></textarea><br>
+    
+    <input type="submit" value="Submit">
+  </form>
 </body>
 
-</html>
+
+
+  
 
