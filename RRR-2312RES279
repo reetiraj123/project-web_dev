@@ -1,0 +1,211 @@
+
+<html>
+
+<head>
+    <title>Packaged Food Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 0px;
+            background-image: url('top-close-up-view-vegetables-tomatoes-with-pedicels-garlic-bell-peppers-lemon-oil-onion_140725-72203.avif');
+        }body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        section {
+            width: 45%;
+        }
+
+        button {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f0c14b;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e2a000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>McDonald's Ingredients</h1>
+        <p>Learn more about the ingredients used in your favorite McDonald's menu items.</p>
+    </header>
+
+    <main>
+        <section id="menu-items">
+            <h2>Menu Items</h2>
+            <ul>
+                <li><button onclick="showIngredients('bigmac')">Big Mac</button></li>
+                <li><button onclick="showIngredients('quarterpounder')">Quarter Pounder</button></li>
+                <li><button onclick="showIngredients('chickennuggets')">Chicken McNuggets</button></li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </section>
+
+        <section id="ingredients">
+            <h2>Ingredients</h2>
+            <p id="ingredient-info">Select a menu item to see its ingredients.</p>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript code
+        // Define an object to store ingredient information for each menu item
+        const ingredientsData = {
+            bigmac: [
+                '100% pure beef',
+                'Big Mac sauce',
+                'Lettuce',
+                'American cheese',
+                'Pickles',
+                'Onions',
+                'Sesame seed bun'
+            ],
+            quarterpounder: [
+                '100% pure beef',
+                'American cheese',
+                'Onions',
+                'Pickles',
+                'Ketchup',
+                'Sesame seed bun'
+            ],
+            chickennuggets: [
+                'Chicken breast meat',
+                'Seasoning',
+                'Breading',
+                'Vegetable oil'
+            ]
+            // Add more menu items as needed
+        };
+
+        // Function to display ingredients for a selected menu item
+        function showIngredients(menuItem) {
+            const ingredientsSection = document.getElementById('ingredient-info');
+            const ingredientsList = ingredientsData[menuItem];
+            
+            if (ingredientsList) {
+                ingredientsSection.innerHTML = `<strong>Ingredients:</strong> ${ingredientsList.join(', ')}`;
+            } else {
+                ingredientsSection.innerHTML = 'No information available for this menu item.';
+            }
+        }
+    </script>
+</body>
+
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result h3 {
+            margin-bottom: 5px;
+        }
+
+        .result p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Packaged Food Fact Checker</h1>
+        <p>Enter the product name or barcode to check its ingredients and nutritional content:</p>
+        <input type="text" id="productInput" placeholder="Product name or barcode...">
+        <button onclick="checkProduct()">Check</button>
+
+        <div class="result" id="result">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration purposes
+        const foodData = {
+            "Apple Juice": {
+                ingredients: "Water, Apple Juice Concentrate, Citric Acid, Natural Flavor",
+                nutrition: "Calories: 110, Sugar: 26g, Vitamin C: 120%"
+            },
+            "Chocolate Bar": {
+                ingredients: "Cocoa Butter, Milk, Sugar, Chocolate, Soy Lecithin",
+                nutrition: "Calories: 210, Fat: 12g, Sugar: 20g"
+            },
+            "Canned Corn": {
+                ingredients: "Corn, Water, Salt",
+                nutrition: "Calories: 80, Carbohydrates: 16g, Fiber: 2g"
+            }
+        };
+
+        // Function to check product information
+        function checkProduct() {
+            const input = document.getElementById('productInput').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            // Clear previous result
+            resultDiv.innerHTML = '';
+
+            // Check if the product exists in the data
+            if (foodData[input]) {
+                // Display product information
+                const productData = foodData[input];
+                resultDiv.innerHTML = `
+                    <h3>Product: ${input}</h3>
+                    <p><strong>Ingredients:</strong> ${productData.ingredients}</p>
+                    <p><strong>Nutritional Content:</strong> ${productData.nutrition}</p>
+                `;
+            } else {
+                resultDiv.innerHTML = `<p>Product not found in the database. Please try another product.</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
